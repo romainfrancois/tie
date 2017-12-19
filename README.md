@@ -2,12 +2,12 @@
 tie
 ===
 
-The goal of tie is to tie return values from function to
+The goal is to `tie` return values from function to variables.
+
+This is more of an experiment, The [zeallot](https://github.com/nteetor/zeallot) package is better.
 
 Example
 -------
-
-This is a basic example which shows you how to solve a common problem:
 
 ``` r
 library(tie)
@@ -15,15 +15,15 @@ library(tie)
 x <- rnorm(100)
 tie[low,up] <- range(x)
 low
-#> [1] -3.243978
+#> [1] -2.444966
 up
-#> [1] 2.140045
+#> [1] 2.692163
 
 tie[,q25,q50,q75,] <- quantile(x)
 q25
-#> [1] -0.5266646
+#> [1] -0.6050872
 q75
-#> [1] 0.6280359
+#> [1] 0.4878661
 
 library(stringr)
 fruits <- c(
