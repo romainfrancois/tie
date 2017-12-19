@@ -34,4 +34,17 @@ up
 tie[,q25,q50,q75,] <- quantile(x)
 q25
 q75
+
+library(stringr)
+fruits <- c(
+  "apples and oranges and pears and bananas",
+  "pineapples and mangos and guavas"
+)
+tie[left, right] <- str_split(fruits, " and ")
+left
+right
+
+tie[coef, res] = lm( Sepal.Length ~ Species, data = iris)
+coef
+res
 ```
