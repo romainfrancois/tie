@@ -1,0 +1,12 @@
+Package: tie
+Title: Tie function return values to names
+Version: 0.0.0.9000
+Authors@R: c(
+    person("Romain", "Francois", email = "romain@thinkr.fr", role = c("aut", "cre"))
+  )
+Description: Tie function return values to names.
+Depends: R (>= 3.4.3)
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1.9000

@@ -1,0 +1,37 @@
+---
+output:
+  md_document:
+    variant: markdown_github
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+
+
+# tie
+
+The goal of tie is to tie return values from function to 
+
+## Example
+
+This is a basic example which shows you how to solve a common problem:
+
+```{r example}
+library(tie)
+
+x <- rnorm(100)
+tie[low,up] <- range(x)
+low
+up
+
+tie[,q25,q50,q75,] <- quantile(x)
+q25
+q75
+```
