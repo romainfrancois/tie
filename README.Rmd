@@ -17,35 +17,17 @@ knitr::opts_chunk$set(
 
 # tie
 
-The goal is to `tie` return values from function to variables. 
+`bow` and `tie` can be combined to do something similar to `dplyr::summarise`, 
+but allowing to express how to redistribute parts of the results to their own 
+column. 
 
-This is more of an experiment, The [zeallot](https://github.com/nteetor/zeallot)
-package is better. 
-
-## Example
-
-```{r example}
+```{r}
 library(tie)
 
-x <- rnorm(100)
-tie[low,up] <- range(x)
-low
-up
-
-tie[,q25,q50,q75,] <- quantile(x)
-q25
-q75
-
-library(stringr)
-fruits <- c(
-  "apples and oranges and pears and bananas",
-  "pineapples and mangos and guavas"
-)
-tie[left, right] <- str_split(fruits, " and ")
-left
-right
-
-tie[coef, res] = lm( Sepal.Length ~ Species, data = iris)
-coef
-res
+iris %>% 
+  dplyr::group_by(Species) %>% 
+  bow( tie(min, max) := range(Sepal.Length) )
 ```
+
+
+
