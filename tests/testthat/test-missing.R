@@ -17,3 +17,19 @@ test_that("bowtie understand missing", {
     dplyr::summarise(data, min = min(Sepal.Length) )
   )
 })
+
+test_that("necktie understand missing", {
+  res <- data %>%
+    neck( tie(,max) := range(Sepal.Length))
+
+  expect_identical(res,
+    dplyr::mutate(data, max = max(Sepal.Length) )
+  )
+
+  res <- data %>%
+    neck( tie(min,) := range(Sepal.Length))
+
+  expect_identical(res,
+    dplyr::mutate(data, min = min(Sepal.Length) )
+  )
+})
