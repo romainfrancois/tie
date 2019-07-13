@@ -17,16 +17,19 @@ knitr::opts_chunk$set(
 
 # tie
 
-`bow` and `tie` can be combined to do something similar to `dplyr::summarise`, 
-but allowing to express how to redistribute parts of the results to their own 
-column. 
+`bow` and `neck` can be combined to `tie` to do something similar to `dplyr::summarise` and `dplyr::mutate` respectively, but allowing to express how to redistribute parts of the results to their own column.
 
 ```{r}
+library(dplyr)
 library(tie)
 
 iris %>% 
-  dplyr::group_by(Species) %>% 
+  group_by(Species) %>% 
   bow( tie(min, max) := range(Sepal.Length) )
+
+iris %>% 
+  group_by(Species) %>% 
+  neck( tie(min, max) := range(Sepal.Length) )
 ```
 
 
