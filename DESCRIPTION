@@ -4,12 +4,12 @@ Version: 0.0.0.9000
 Authors@R: c(
     person("Romain", "Francois", email = "romain@purrple.cat", role = c("aut", "cre"))
   )
-Description:  Multiple value summarise.
+Description: Multiple value summarise.
 Depends: R (>= 3.4.3)
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.1
 Imports: assertthat,
     rlang, 
     dplyr
